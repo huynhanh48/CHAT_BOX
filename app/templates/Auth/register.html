@@ -1,0 +1,87 @@
+{% extends 'base.html' %} {% block title %}Register{% endblock %} {% block
+content %}
+<div class="register">
+    <div class="container register-container">
+        <img
+            src="{{url_for('static',filename='images/image-main.jpg')}}"
+            alt=""
+            class="register__img"
+        />
+        <div class="register__info">
+            <h1 class="register__info__title">Welcome To Brycen Company</h1>
+            <p class="desc register__desc">
+                Already have an account?
+                <a href="#!" class="register_redirection">Log in </a>
+            </p>
+            <form
+                action="{{ url_for('auth_pages.register') }}"
+                method="post"
+                class="register__form"
+            >
+                {{ form.hidden_tag() }}
+
+                <!-- Email Field -->
+                <div class="register__list-item">
+                    {{ form.email.label('Email',class ='register__label') }} {{
+                    form.email(class='register__box') }}
+                </div>
+
+                <!-- User Name Field -->
+                <div class="register__list-item">
+                    {{ form.user_name.label('Username',class='register__label')
+                    }} {{ form.user_name(class='register__box') }}
+                </div>
+
+                <!-- Password Field -->
+                <div class="register__list-item">
+                    {{ form.password.label('Password',class='register__label')
+                    }} {{ form.password(class='register__box') }}
+                </div>
+
+                <!-- Confirm Password Field -->
+                <div class="register__list-item">
+                    {{ form.confirm_password.label('Confirm Password',
+                    class='register__label') }} {{
+                    form.confirm_password(class='register__box') }}
+                </div>
+                <div class="register__list-item">
+                    <div class="register__list_checkbox">
+                        <input
+                            class="register__list-checkbox-editor"
+                            type="checkbox"
+                            name=""
+                            id=""
+                        />
+                        <p class="desc register__checkbox__font">
+                            I want to receive emails about the product, feature
+                            updates, events, and marketing promotions.
+                        </p>
+                    </div>
+                    <p class="desc register__desc">
+                        By creating an account, you agree to the
+                        <a href="#!" class="register_redirection">
+                            Terms of use
+                        </a>
+                        and
+                        <a href="#!" class="register_redirection">
+                            Privacy Policy.
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="register__list-item">
+                    {{ form.submit(value='Create an account',class='btn
+                    btn-submit') }}
+                </div>
+                <div class="register__list-item">
+                    <p class="desc register__desc">
+                        Already have an ccount?
+                        <a href="#!" class="register_redirection">Log in </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
