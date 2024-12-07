@@ -146,6 +146,7 @@ header{
 /*===================hero===================== */
 .footer-container{
     background-color:#2C2C2C ;
+    padding-bottom: 30px;
 }
 .footer__logo{
     width: 50%;
@@ -156,7 +157,15 @@ header{
     grid-template-columns: repeat(4,1fr);
     column-gap: 20px;
     color: #fff;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
+}
+.footer__underline{
+    margin-bottom: 20px;
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
 }
 .footer__list__item{
     display: flex;
@@ -211,6 +220,15 @@ header{
     background: rgba(240, 237, 237, 0.8);
     
 }
+.footer__copyright{
+    font-family: Open Sans;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+    color: #C8C8C880;
+
+}
 /*===================register===================== */
 .register{
     height:  calc(100vh - (87px));
@@ -228,7 +246,7 @@ header{
     height: 1051px; */
     width: 400px;
     height: 600px;
-    margin-left: 8px;
+    margin-left: 100px;
     border-radius:  999px;
     object-fit: cover;
 }
@@ -293,6 +311,8 @@ input[type="checkbox"] {
     line-height: 1.5;
 }
 .btn-submit{
+    height: 60px;
+    cursor:pointer;
     font-size: 2.2rem;
     font-weight: 500;
     line-height: 1.5;
@@ -301,5 +321,11 @@ input[type="checkbox"] {
     background: #9d9d9d;
     color: #fff;
     margin: 20px 0;
+}
+.btn-submit:hover{
+    /* border-width: 2px;
+    border: 1px solid #000; */
+    background-image: linear-gradient(to right, rgb(77, 75, 75) , rgb(226, 226, 226));
+    backdrop-filter: blur(20px);
 }
 

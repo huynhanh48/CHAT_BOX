@@ -1,12 +1,14 @@
 <header>
     <div class="container header__container">
-        <img
-            src="{{url_for('static',filename='images/logo.svg')}}"
-            alt=""
-            class="header__logo"
-        />
+        <a href="{{url_for('home_page.home')}}">
+            <img
+                src="{{url_for('static',filename='images/logo.svg')}}"
+                alt=""
+                class="header__logo"
+            />
+        </a>
         <nav class="header__nav">
-            <a href="#!" class="nav__link">Main</a>
+            <a href="{{url_for('home_page.home')}}" class="nav__link">Main</a>
             <a href="#!" class="btn nav__link"
                 >TRY CHAT
                 <img
