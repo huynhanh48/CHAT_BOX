@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block title %}Home{% endblock title %} {% block
+content %}
+<section class="hero">
+    <div class="container hero-container">
+        <div class="hero__info">
+            <h1 class="hero__info__title">BRYCEN</h1>
+            <p class="desc hero__info-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                lobortis maximus nunc, ac rhoncus odio congue quis. Sed ac
+                semper orci, eu porttitor lacus.
+            </p>
+            <a href="#!" class="btn hero-btn">Sign up for free</a>
+            <div class="hero__info__row">
+                <div class="hero__info__row__column">
+                    <img
+                        src="{{url_for('static',filename='images/icon-appstore.svg')}}"
+                        alt=""
+                        class="hero__link"
+                    />
+                    <div class="hero__column-child">
+                        <span class="content__child">Download on the</span>
+                        <span class="content__child">App Store</span>
+                    </div>
+                </div>
+                <div class="hero__info__row__column">
+                    <img
+                        src="{{url_for('static',filename='images/icon-googleplay.svg')}}"
+                        alt=""
+                        class="hero__link"
+                    />
+                    <div class="hero__column-child">
+                        <span class="content__child">Get It On</span>
+                        <span class="content__child">Google Play</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img
+            src="{{url_for('static',filename='images/image-main.jpg')}}"
+            alt=""
+            class="hero__info__img"
+        />
+    </div>
+</section>
+{% endblock content %}
