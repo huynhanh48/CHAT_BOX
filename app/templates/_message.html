@@ -1,0 +1,33 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+<div class="list__message">
+    {% for category, message in messages %}
+    <div class="list__message__item {{ category }}">
+        <div class="background__item">
+            {% if category == 'success' %}
+            <i class="fa-solid fa-circle-check item__icon__first"></i>
+            {% elif category == 'danger' %}
+            <i class="fa-solid fa-circle-exclamation item__icon__second"></i>
+            {% else %}
+            <i class="fa-solid fa-triangle-exclamation item__icon__three"></i>
+            {% endif %}
+        </div>
+        <p>{{ message }}</p>
+        <div class="background__item">
+            <i class="fa-solid fa-circle-xmark item__icon__last"></i>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endwith %}
+
+<script>
+    // Lấy tất cả các phần tử với lớp 'list__message__item'
+    const messageItems = document.querySelectorAll(".list__message__item");
+
+    // Lặp qua từng phần tử và thêm lớp 'hidden' sau 5 giây
+    messageItems.forEach((item) => {
+        setTimeout(() => {
+            item.classList.add("hidden");
+        }, 5000); // 5000ms = 5 giây
+    });
+</script>

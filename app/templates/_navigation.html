@@ -18,9 +18,20 @@
             /></a>
             <a href="#!" class="nav__link">Contacts</a>
         </nav>
+        {% if current_user.is_authenticated %}
         <div class="login">
-            <a href="#!" class="btn">LOGIN</a>
+            <span class="btn btn-decoration">{{current_user.user_name}}</span>
+            <a
+                href="{{url_for('auth_pages.logout')}}"
+                class="btn btn-decoration-login"
+                >Log out</a
+            >
+        </div>
+        {% else %}
+        <div class="login">
+            <a href="{{url_for('auth_pages.login')}}" class="btn">LOGIN</a>
             <a href="{{url_for('auth_pages.register')}}" class="btn">SIGN UP</a>
         </div>
+        {% endif %}
     </div>
 </header>

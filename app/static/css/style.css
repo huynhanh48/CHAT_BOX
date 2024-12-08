@@ -76,6 +76,17 @@ header{
 .login{
     margin-right: 40px;
 }
+.btn-decoration{
+    background: #fff;
+    color: #111111;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+.btn-decoration-login{
+    border-radius: 8px;
+    border: 1px solid #000;
+}
 /*===================hero===================== */
 .hero-container
 {
@@ -234,6 +245,7 @@ header{
     height:  calc(100vh - (87px));
 }
 .register-container{
+    position: relative;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -327,5 +339,78 @@ input[type="checkbox"] {
     border: 1px solid #000; */
     background-image: linear-gradient(to right, rgb(77, 75, 75) , rgb(226, 226, 226));
     backdrop-filter: blur(20px);
+}
+/*===================login===================== */
+.login__title{
+    font-size: 9.6rem;
+    font-weight: 500;
+    line-height: 144px;
+
+}
+
+/*===================error message===================== */
+.list__message{
+    top: 100px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.list__message__item{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    /* border-radius: 8px; */
+    box-shadow: 0 1px 5px 0px #565756;
+    font-size: 1.6rem ;
+    font-weight: 300;
+    width: 400px;
+    height: 50px;
+    opacity: 1; 
+    transition: all 0.3s ease;
+    
+}
+
+.list__message__item.hidden {
+    
+    opacity: 0;  /* Mờ dần phần tử */
+    visibility: hidden;  /* Ẩn phần tử */
+}
+.background__item{
+    width: 50px;
+    height: 50px;
+    background: #5c5454;
+    opacity: 0.5;
+    text-align: center;
+    line-height: 65px;
+}
+.item__icon__first{
+    font-size: 25px;
+    color: #339f7b;
+}
+.item__icon__last{
+    font-size: 25px;
+    color: #fff;
+}
+.success{
+    background: #339f7b;
+}
+.warring{
+    background: orange;
+}
+.danger{
+    background: red;
+}
+.item__icon__second{
+    font-size: 25px;
+
+}
+.item__icon__three{
+    font-size: 25px;
+
 }
 

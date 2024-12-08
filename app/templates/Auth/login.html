@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block title %}Login{% endblock %} {% block content
+%}
+<div class="register">
+    <div class="container register-container">
+        {% include '_message.html' %}
+        <img
+            src="{{url_for('static',filename='images/image-main.jpg')}}"
+            alt=""
+            class="register__img"
+        />
+        <div class="register__info">
+            <h1 class="register__info__title login__title">Login</h1>
+            <form
+                action="{{ url_for('auth_pages.login') }}"
+                method="post"
+                class="register__form"
+            >
+                {{ form.hidden_tag() }}
+
+                <!-- Email Field -->
+                <div class="register__list-item">
+                    {{ form.email.label('Email address',class
+                    ='register__label') }} {{ form.email(class='register__box')
+                    }}
+                </div>
+
+                <!-- Password Field -->
+                <div class="register__list-item">
+                    {{ form.password.label('Password',class='register__label')
+                    }} {{ form.password(class='register__box') }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="register__list-item">
+                    {{ form.submit(value='Login',class='btn btn-submit') }}
+                </div>
+                <a href="#!" class="register_redirection login_redirect"
+                    >Forgot password?</a
+                >
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
