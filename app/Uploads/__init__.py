@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, flash,redirect,url_for
 import os
 from .form import Upload
+from  ..moduls import  File_Session
+from datetime import date
 
 uploads_pages = Blueprint('uploads_pages', __name__)
 
@@ -19,7 +21,7 @@ def loadfile():
         # Ensure the 'Uploads' directory exists
         if not os.path.exists(upload_folder):
             os.makedirs(upload_folder)
-        
+        # file_databse = File_Session(date_time=date.today(),)
         file_path = os.path.join(upload_folder, file.filename)
         file.save(file_path)  # Save the file to the destination
         

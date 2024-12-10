@@ -3,7 +3,7 @@ import  dotenv
 from flask  import Flask
 from .config import app_config
 from .db_conection import db,migrate,login_manager
-from  .moduls import User
+from  .moduls import User,File_Session
 def  create_app(config_name=None):
     app = Flask(__name__,instance_relative_config=True)
     app.config.from_object(app_config[config_name])
