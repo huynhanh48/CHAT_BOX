@@ -6,6 +6,7 @@ from  ..moduls import  File_Session
 from ..db_conection import db
 from datetime import date
 import datetime
+import re
 
 uploads_pages = Blueprint('uploads_pages', __name__)
 
@@ -14,6 +15,10 @@ uploads_pages = Blueprint('uploads_pages', __name__)
 def loadfile():
     form = Upload()
     form_file = File_Session.query.all()
+    for i in range(len(form_file)):
+        temp_link = re.split(r'\\',form_file[i].file_url)
+        form_file[i].file_url= temp_link[-1]
+
     if form.validate_on_submit():
         print('Validation Passed')
         

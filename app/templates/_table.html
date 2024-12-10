@@ -10,7 +10,7 @@
                 <div class="table__item list__attribute">Status</div>
                 <div class="table__item list__attribute">Delete</div>
                 <div class="table__item list__attribute">Update</div>
-                {% for file in form_file  %}
+                {% for file in form_file | reverse  %}
                     <div class="table__item"> <span class="table__info">{{file.author}}</span></div>
                     <div class="table__item"><span class="table__info">{{file.date_time}}</span></div>
                     <div class="table__item"><span class="table__info">{{file.file_url}}</span></div>
