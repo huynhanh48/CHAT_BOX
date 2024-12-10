@@ -10,19 +10,14 @@
                 <div class="table__item list__attribute">Status</div>
                 <div class="table__item list__attribute">Delete</div>
                 <div class="table__item list__attribute">Update</div>
+                {% for file in form_file  %}
+                    <div class="table__item"> <span class="table__info">{{file.author}}</span></div>
+                    <div class="table__item"><span class="table__info">{{file.date_time}}</span></div>
+                    <div class="table__item"><span class="table__info">{{file.file_url}}</span></div>
+                    <div class="table__item"><span class="table__info">{{file.status}}</span></div>
+                    <div class="table__item"><span class="table__info"><a href="{{url_for('uploads_pages.remove',id=file.id)}}" class="btn btn-danger btn-table">Delete</a></span></div>
+                    <div class="table__item"><span class="table__info"><a href="#!" class="btn btn-success btn-table">update</a></span></div>
                 
-                <div class="table__item"> <span class="table__info">Name</span></div>
-                <div class="table__item"><span class="table__info">12/12/2024</span></div>
-                <div class="table__item"><span class="table__info">abs.csv</span></div>
-                <div class="table__item"><span class="table__info">correct</span></div>
-                <div class="table__item"><span class="table__info"><a href="#!" class="btn btn-danger btn-table">Delete</a></span></div>
-                <div class="table__item"><span class="table__info"><a href="#!" class="btn btn-success btn-table">update</a></span></div>
-    
-                <div class="table__item"> <span class="table__info">Name</span></div>
-                <div class="table__item"><span class="table__info">12/12/2024</span></div>
-                <div class="table__item"><span class="table__info">abs.csv</span></div>
-                <div class="table__item"><span class="table__info">correct</span></div>
-                <div class="table__item"><span class="table__info"><a href="#!" class="btn btn-danger btn-table">Delete</a></span></div>
-                <div class="table__item"><span class="table__info"><a href="#!" class="btn btn-success btn-table">update</a></span></div>
+                {% endfor %}
     </div>
 </div>

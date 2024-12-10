@@ -14,7 +14,7 @@ def  create_app(config_name=None):
 
     login_manager.init_app(app)
     login_manager.login_message = "You must be logged in to access this page."
-    login_manager.login_view = "auth.login"
+    login_manager.login_view = "auth_pages.login"
     
     from .Home import home_page as home_blueprint
     from .Auth import auth_pages as  auth_blueprint

@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     def verify_password(self,password):
         return  check_password_hash(self.password_hash,password)
     def __repr__(self):
-        return  "<employment:{}>".format(self.user_name)
+        return  self.user_name
     
 @login_manager.user_loader
 def load_user(user_id):
@@ -31,4 +31,4 @@ class File_Session(db.Model,UserMixin):
     status = db.Column(Boolean(),default=False)
     
     def __repr__(self):
-        return  "<employment:{}>".format(self.file_url)
+        return  self.file_url

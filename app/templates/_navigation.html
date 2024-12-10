@@ -20,6 +20,13 @@
         </nav>
         {% if current_user.is_authenticated %}
         <div class="login">
+            <span class="btn btn-decoration database-decoration">Database
+                <ul class="url_database">
+                    <a href="{{url_for('uploads_pages.loadfile')}}" class="url_database_item">Upload</a>
+                    <a href="#!" class="url_database_item">item2</a>
+                    <a href="#!" class="url_database_item">item3</a>
+                </ul>
+            </span>
             <span class="btn btn-decoration">{{current_user.user_name}}</span>
             <a
                 href="{{url_for('auth_pages.logout')}}"
