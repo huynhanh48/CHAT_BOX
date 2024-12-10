@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block title%} Uploads {% endblock title%}
+{% block  content %}
+<div class="register">
+    <div class="container register-container">
+        {% include '_message.html' %}
+        <img
+            src="{{url_for('static',filename='images/image-main.jpg')}}"
+            alt=""
+            class="register__img"
+        />
+        <div class="register__info">
+            <h1 class="register__info__title login__title">Upload FILE </h1>
+            <div class="uploads">
+                <div class="container uploads-container">
+                    <form action="{{url_for('uploads_pages.loadfile')}}" method="post" enctype='multipart/form-data'>
+            
+                        {{ form.hidden_tag() }}
+                
+                       
+                        {{ form.files.label('File : ') }}
+                        {{ form.files() }} 
+                        
+                        
+                        {{ form.submit() }}
+            
+                    </form>
+                </div>
+            </div>
+            {% include '_table.html'%}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

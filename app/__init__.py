@@ -18,8 +18,9 @@ def  create_app(config_name=None):
     
     from .Home import home_page as home_blueprint
     from .Auth import auth_pages as  auth_blueprint
+    from .Uploads import  uploads_pages as uploads_blueprint
     app.register_blueprint(home_blueprint)
     app.register_blueprint(auth_blueprint,url_prefix='/auth')
+    app.register_blueprint(uploads_blueprint)
     
     return  app
-    
